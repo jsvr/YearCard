@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 视图窗口，移动端特属的标签。 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>岁时有声‖定制你的音乐气质</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/index.css?v=004">
+    <script>
+        /**
+         * [移动端适配]
+         * 宽度固定，viewport 缩放
+         * width 设计稿宽度
+         */
+        function adaptive(win, doc) {
+            console.log(win.innerHeight);
+            var metaViewport = doc.querySelector('meta[name="viewport"]');
+            var width = 750;
+            var iw = win.innerWidth || width;
+            var ow = win.outerWidth || iw;
+            var sw = win.screen.width || iw;
+            var saw = win.screen.availWidth || iw;
+            var minWidth = Math.min(width, iw, ow, sw, saw);
+            var scale = minWidth / width;
+            metaViewport.content = 'width=' + width + ',initial-scale=' + scale + ',maximum-scale=' + scale +
+                ',minimum-scale=' + scale + ',user-scalable=no';
+        }
+        adaptive(window, document);
+        // (function (win, doc) {
+        //     var metaViewport = doc.querySelector('meta[name="viewport"]');
+        //     var width = 750;
+        //     var iw = win.innerWidth || width;
+        //     var ow = win.outerWidth || iw;
+        //     var sw = win.screen.width || iw;
+        //     var saw = win.screen.availWidth || iw;
+        //     var minWidth = Math.min(width, iw, ow, sw, saw);
+        //     var scale = minWidth / width;
+        //     metaViewport.content = 'width=' + width + ',initial-scale=' + scale + ',maximum-scale=' + scale +
+        //         ',minimum-scale=' + scale + ',user-scalable=no';
+        // }(window, document));
+        // window.onload = function () {adaptive(window, document);}
+    </script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/zepto.fx.js"></script>
+    <script src="js/zepto.touch.js"></script>
+</head>
+
+<body>
+    <div class="loading J-loading">
+        <div class="img_gif_box">
+            <img src="assets/images/loading.gif" alt="">
+            <p>Loading</p>
+        </div>
+    </div>
+    <audio class="index_audio" preload="auto" loop=true>
+        <source src="assets/audio/index_audio.mp3">
+    </audio>
+    <!-- 活动详情弹框 -->
+    <div class="details_popup j-detailsPopup">
+            <div class="content">
+                <div class="close_btn J-closeBtn"></div>
+                <div class="content_box">
+                    <img class="J-detailsImg" src="assets/images/page05_activity_img01.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    <div class="swiper-container" id="swiperV">
+        <div class="swiper-wrapper">
+            <!-------------slide1----------------->
+            <div class="swiper-slide">
+                <div class="page page1 J-loadImg">
+                    <!-- 新年快乐 icon -->
+                    <div class="icon icon1"></div>
+                    <div class="icon icon2"></div>
+                    <div class="icon icon3"></div>
+                    <div class="icon icon4"></div>
+                    <div class="top_tit J-loadImg"></div>
+                    <div class="mid_img J-loadImg"></div>
+                    <div class="btm_logo J-loadImg"></div>
+                </div>
+            </div>
+            <!---------------slide2-------------->
+            <div class="swiper-slide">
+                <div class="page page2 J-loadImg">
+                    <div class="top_content">
+                        <!-- 唱片 -->
+                        <div class="disc J-loadImg"></div>
+                        <!-- 唱针 -->
+                        <div class="styli J-loadImg"></div>
+                    </div>
+                    <div class="bottom_content">
+                        <div class="text_box clearx">
+                            <div class="text1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.1s">你曾将某个心事</div>
+                            <div class="text2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.2s">藏进哪一段旋律?</div>
+                            <div class="text3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.3s">你曾将一段时光</div>
+                            <div class="text4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.4s">寄予哪几段歌词?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------slide3-------------->
+            <div class="swiper-slide">
+                <div class="page page3 J-loadImg">
+                    <div class="swiper-container" id="swiperH">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="item1">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_dxl01.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli J-loadImg"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc J-loadImg"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item2">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_wmdxsd02.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item3">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_lj03.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item4">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_sf04.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item5">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_hwg05.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item6">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_hz06.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item7">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_bmcyj07.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换唱片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item8">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_mlff08.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换照片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item9">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_thsj09.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换照片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item10">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_slzm10.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换照片</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item11">
+                                    <audio class="card_audio" preload="auto" loop=true>
+                                        <source src="assets/audio/page03_audio_zjp11.mp3">
+                                    </audio>
+                                    <!-- 唱片内容 -->
+                                    <div class="top_content">
+                                        <!-- 唱针 -->
+                                        <div class="styli J-styli"></div>
+                                        <!-- 唱片 -->
+                                        <div class="disc J-disc"></div>
+                                        <!-- 专辑封面  -->
+                                        <div class="album_art J-albumArt J-loadImg"></div>
+                                    </div>
+                                    <!-- 歌手介绍 -->
+                                    <div class="mid_content"></div>
+                                    <!-- 提示滑动 -->
+                                    <div class="bottom_content">左右滑动更换照片</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------slide4----------------->
+            <div class="swiper-slide">
+                <div class="page page4 J-loadImg">
+                    <div class="text_box clearx">
+                        <div class="text1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.1s">岁月歌声皆如水,</div>
+                        <div class="text2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.2s">唤起几许心绪的映照,</div>
+                        <div class="text3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.3s">洇入一段生命的底色</div>
+                    </div>
+                </div>
+            </div>
+            <!-------------slide5----------------->
+            <div class="swiper-slide">
+                <div class="page page5 J-loadImg">
+                    <div class="top_tit"></div>
+                    <div class="mid_detail">
+                        <!-- <div class="swiper-container" id="swiperDetail">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide item1">1</div>
+                                <div class="swiper-slide item2">2</div>
+                                <div class="swiper-slide item3">3</div>
+                            </div>
+                        </div> -->
+                        <div class="img_item img_item1 J-imgItemt J-loadImg"></div>
+                        <div class="img_item img_item2 J-imgItemt J-loadImg"></div>
+                        <div class="img_item img_item3 J-imgItemt J-loadImg"></div>
+                        <div class="img_item img_item4 J-imgItemt J-loadImg"></div>
+                        <div class="img_item img_item5 J-imgItemt J-loadImg"></div>
+                        <div class="img_item img_item6 J-imgItemt J-loadImg"></div>
+                    </div>
+                    <!-- 活动详情弹框 -->
+                    <!-- <div class="details_popup j-detailsPopup">
+                        <div class="content">
+                            <div class="close_btn J-closeBtn"></div>
+                            <div class="content_box">
+                                <img class="J-detailsImg" src="assets/images/page05_activity_img01.jpg" alt="">
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="btm_text J-viewDetails">左右滑动查看更多活动<br />点击图片查看活动详情</div>
+                </div>
+            </div>
+            <!-------------slide6----------------->
+            <div class="swiper-slide">
+                <div class="page page6 J-loadImg">
+                    <div class="top_img J-loadImg"></div>
+                    <div class="mid_text">
+                        <div class="text_box clearx">
+                            <div class="text1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.1s">一年将近,</div>
+                            <div class="text2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.2s">此时爆竹与歌吹同渲沸</div>
+                            <div class="text3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.3s">来日方长,</div>
+                            <div class="text4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.6" swiper-animate-delay="0.4s">愿你欢喜与深情共丰盈</div>
+                        </div>
+                    </div>
+                    <div class="btm_btn J-btmBtn"></div>
+                    <!-- 生成用户的专属图片 -->
+                    <div class="user_img J-userImg J-loadImg">
+                        <!-- 截图的内容 -->
+                        <div class="user_img_content J-userImgContent">
+                            <div class="top_tit">
+                                <div class="top_tit_bg">
+                                    <img src="assets/images/page07_title_bg.png" alt="">
+                                </div>
+                                <div class="top_tit_name J-userName">浪子回头天宝</div>
+                            </div>
+                            <div class="mid_img">
+                                <img class="j-useRexclusiveImg" src="assets/images/page07_user_kuaile.png" alt="kuaile">
+                            </div>
+                        </div>
+                        <!-- 截图描述 -->
+                        <div class="user_descriptor">
+                            长按图片保存<br />
+                            凭此气质封面截图可在天猫"中国唱片上海专营店"<br />
+                            享受专属优惠活动<br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 每页显示的滑动剪头 -->
+        <img src="assets/images/web-swipe-tip.png" style="width:20px;height:15px; top:460px; left:150px;" id="array" class="resize">
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+    <script>
+        $(function () {
+            // 判断图片是否加载完成
+            // loadDefault();
+            // 给iphoneX 的长屏分辨率手机设置css样式
+            setCss();
+            // 用户的id
+            var userName = '浪子回头天宝';
+            // 首页背景音乐的播放时间位置 s
+            var timestamp = 0;
+            // logding 标记初始值, 用来判断是否加载完成
+            var loadingflag = 0;
+            // page5 img_item 的index
+            var imgItemIndex = 0;
+            // 判断背景图片是否加载完成
+            document.onreadystatechange = function () {//即在加载的过程中执行下面的代码
+                if(document.readyState=="complete"){//complete加载完成
+                    console.log('全部加载完毕!');
+                    // 隐藏loading 动画页面
+                    $('.J-loading').hide();
+                    const index = swiperV.activeIndex;
+                    palyIndexAudio(index);
+                }
+            }
+            function loadDefault(){
+                let imgUrlArr = [];
+                let imgObj = [];
+                let imgArrLength = $('.J-loadImg').length;
+                $.each($('.J-loadImg'), function(index, item) {
+                    console.log($('.J-loadImg').length);
+                    imgUrlArr.push($('.J-loadImg').eq([index]).css('background-image').match(/url\("(\S*)"\)/)[1]);
+                    const img = new Image();
+                    img.src = $('.J-loadImg').eq([index]).css('background-image').match(/url\("(\S*)"\)/)[1];
+                    imgObj.push(img);
+                    img.onload = function() {
+                        loadingflag ++;
+                        if(loadingflag === imgArrLength) {
+                            console.log('全部加载完毕!');
+                            // 隐藏loading 动画页面
+                            $('.J-loading').hide();
+                            const index = swiperV.activeIndex;
+                            palyIndexAudio(index);
+                        } else {
+                            // 显示loading 动画页面
+                            $('.J-loading').show();
+                        }
+                    }
+                });
+            }
+            // 给大屏设置css 
+            function setCss() {
+                if (window.innerHeight > 1334) {
+                    $('.page3 .mid_content').css({ 'bottom': '24%' });
+                    $('.page3 .bottom_content').css({ 'bottom': '13%' });
+                    // $('.page1>.icon1, .page1>.icon2').css({ 'top': '50px' });
+                    // $('.page1>.icon4, .page1>.icon3').css({ 'bottom': '48px' });
+                }
+            }
+            // 设置page3动画
+            function setAnimate(index) {
+                $('.J-disc').eq(index).animate({
+                    'top': '-20%'
+                }, 1000, 'ease-out', function () {
+                    $('.J-styli').eq(index).animate({
+                        'transform': ' rotate(-30deg)',
+                        'transform-origin': 'top left'
+                    }, 1000, 'ease-out', function () {
+                        $('.J-disc').eq(index).addClass('Rotation');
+                        console.log(index);
+                        palyPage3Audio(index);
+                    });
+                });
+            }
+            // 取消page3动画
+            function removeAnimate() {
+                $('.J-disc').css({ 'top': '194px' });
+                $('.J-styli').css({
+                    'transform': ' rotate(0deg)',
+                    'transform-origin': 'top left'
+                });
+                $('.J-disc').removeClass('Rotation');
+            }
+            // 播放page3 audio
+            function palyPage3Audio(index) {
+                console.log(index);
+                const audioLength = $('.card_audio').length - 1;
+                if ($('.card_audio')[index].paused) {
+                    if (window.WeixinJSBridge) {
+                        WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                            $('.card_audio')[index].play();
+                        }, false);
+                    } else {
+                        document.addEventListener("WeixinJSBridgeReady", function () {
+                            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                                $('.card_audio')[index].play();
+                            });
+                        }, false);
+                    }
+                    // 开始播放当前点击的音频
+                    $('.card_audio')[index].play();
+                }
+            }
+            // 暂停page3 audio
+            function pausePage3Audio() {
+                const audioArr = $('.card_audio');
+                const audioLength = audioArr.length - 1;
+                for (let index = 0; index < audioLength; index++) {
+                    audioArr[index].pause();
+                }
+            }
+            // 播放index audio
+            function palyIndexAudio(index) {
+                if (index === 3) {
+                    $('.index_audio')[0].pause();
+                    timestamp = $('.index_audio')[0].currentTime;
+                    console.log(timestamp);
+                } else {
+                    // 移除page3 的动画
+                    removeAnimate();
+                    if ($('.index_audio')[0].paused) {
+                        if (window.WeixinJSBridge) {
+                            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                                // 关闭page3 的音乐
+                                pausePage3Audio();
+                                $('.index_audio')[0].play();
+                            }, false);
+                        } else {
+                            document.addEventListener("WeixinJSBridgeReady", function () {
+                                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                                    // 关闭page3 的音乐
+                                    pausePage3Audio();
+                                    $('.index_audio')[0].play();
+                                });
+                            }, false);
+                        }
+                        // 关闭page3 的音乐
+                        pausePage3Audio();
+                        $('.index_audio')[0].currentTime = timestamp;
+                        $('.index_audio')[0].play();
+                    }
+                }
+            }
+            // 随机生成用户的 img
+            function randomUserImg() {
+                const imgArr = [
+                    'assets/images/page07_user_kuaile.png',
+                    'assets/images/page07_user_youya.png',
+                    'assets/images/page07_user_youya.png',
+                    'assets/images/page07_user_youya.png',
+                    'assets/images/page07_user_youya.png',
+                    'assets/images/page07_user_youya.png',
+                    'assets/images/page07_user_youya.png',
+                    'assets/images/page07_user_youya.png',
+                ];
+                let markNum = Math.floor(Math.random() * 8);
+                console.log(markNum);
+                $('.j-useRexclusiveImg').attr('src', imgArr[markNum]);
+            }
+            var swiperV = new Swiper('#swiperV', {
+                direction: 'vertical',
+                loop: true,
+                onInit: function (swiper) {
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                },
+                onSlideChangeEnd: function (swiper) {
+                    swiperAnimate(swiper);
+                    const index = swiper.activeIndex;
+                    console.log(index);
+                    // 播放首页音乐
+                    if(index!==1){
+                        palyIndexAudio(index);
+                    }
+                }
+            });
+            var swiperH = new Swiper('#swiperH', {
+                direction: 'horizontal',
+                loop: true,
+                onInit: function (swiper) {
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                },
+                onSlideChangeEnd: function (swiper) {
+                    swiperAnimate(swiper);
+                    // 取消动画
+                    removeAnimate();
+                    // 暂停所有播放
+                    pausePage3Audio();
+                },
+            });
+            var swiperDetail = new Swiper('#swiperDetail', {
+                direction: 'horizontal',
+                loop: true,
+                onInit: function (swiper) {
+                    swiperAnimateCache(swiper);
+                    swiperAnimate(swiper);
+                },
+                onSlideChangeEnd: function (swiper) {
+                    swiperAnimate(swiper);
+                },
+                onClick: function (swiper) {
+                    console.log('detail点击了!');
+                }
+            });
+            // page3 点击执行动画
+            $(".J-albumArt").on('click', function () {
+                const index = swiperH.activeIndex;
+                setAnimate(index);
+            });
+            // 点击生成自己的专属图片
+            $(".J-btmBtn").on('click', function () {
+                // 动态生随机生成用户专属图片 src
+                randomUserImg();
+                // 显示生成用户专属图片的弹框
+                $('.J-userImg').show(400);
+                // adaptive(window, document);
+                $('.J-userName').text(userName);
+            });
+            // 点击生成截图
+            $('.J-userImgContent').on('click', function () {
+                generateScreenshot();
+            });
+            // page5 图片滑动
+            $('.J-imgItemt').swipeLeft(function() {
+                const _this = $(this);
+                const index = _this.index();
+                if(index<5){
+                    _this.animate({
+                        'transform': ' rotate(60deg)',
+                        'transform-origin': 'top left'
+                    }, 1000, 'ease-out', function () {
+                        _this.animate({
+                            'top': '58%'
+                        }, 500, 'ease-in', function() {
+                            _this.animate({
+                                'display': 'none'
+                            }, 500, 'ease-in');
+                        });
+                    });
+                }
+            });
+            
+            
+            $('.J-imgItemt').swipeRight(function() {
+                const _this = $(this);
+                const index = _this.index();
+                console.log(index);
+                if(index<6){
+                    $('.J-imgItemt').eq(index-1).animate({
+                        'display': 'block',
+                    }, 100, 'ease-out', function() {
+                        $('.J-imgItemt').eq(index-1).animate({
+                            'top': '50%'
+                        }, 500, 'ease-out-in',function() {
+                            $('.J-imgItemt').eq(index-1).animate({
+                                'transform': ' rotate(0deg)',
+                                'transform-origin': 'top left'
+                            },1000, 'ease-out-in');
+                        });
+                    });
+                }
+            });
+            // page5 点击查看详情页 弹出弹框
+            $('.J-imgItemt').on('click', function() {
+                const index = $(this).index();
+                const imgArr = [
+                    'assets/images/page05_activity_img01.jpg',
+                    'assets/images/page05_activity_img02.jpg',
+                    'assets/images/page05_activity_img03.jpg',
+                    'assets/images/page05_activity_img04.jpg',
+                    'assets/images/page05_activity_img05.jpg',
+                    'assets/images/page05_activity_img06.jpg',
+                ];
+                $('.J-detailsImg').attr('src', imgArr[index]);
+                $('.j-detailsPopup').show();
+            });
+            // page5 popup 关闭
+            $('.J-closeBtn').on('click', function() {
+                $('.j-detailsPopup').hide();
+            })
+        });
+    </script>
+</body>
+
+</html>
