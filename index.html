@@ -36,7 +36,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/index.css?v=004">
+    <link rel="stylesheet" href="css/index.css?v=005">
     <script>
         /**
          * [移动端适配]
@@ -80,7 +80,7 @@
     <div class="loading J-loading">
         <div class="img_gif_box">
             <img src="assets/images/loading.gif" alt="">
-            <p>Loading</p>
+            <p>Loading <i class="J-loadingNum"></i></p>
         </div>
     </div>
     <audio class="index_audio" preload="auto" loop=true>
@@ -413,7 +413,7 @@
                     </div>
                     <div class="btm_btn J-btmBtn"></div>
                     <!-- 生成用户的专属图片 -->
-                    <div class="user_img J-userImg J-loadImg">
+                    <div class="user_img J-userImg">
                         <!-- 截图的内容 -->
                         <div class="user_img_content J-userImgContent">
                             <div class="top_tit">
@@ -445,7 +445,7 @@
     <script>
         $(function () {
             // 判断图片是否加载完成
-            // loadDefault();
+            loadDefault();
             // 给iphoneX 的长屏分辨率手机设置css样式
             setCss();
             // 用户的id
@@ -457,15 +457,15 @@
             // page5 img_item 的index
             var imgItemIndex = 0;
             // 判断背景图片是否加载完成
-            document.onreadystatechange = function () {//即在加载的过程中执行下面的代码
-                if(document.readyState=="complete"){//complete加载完成
-                    console.log('全部加载完毕!');
-                    // 隐藏loading 动画页面
-                    $('.J-loading').hide();
-                    const index = swiperV.activeIndex;
-                    palyIndexAudio(index);
-                }
-            }
+            // document.onreadystatechange = function () {//即在加载的过程中执行下面的代码
+            //     if(document.readyState=="complete"){//complete加载完成
+            //         console.log('全部加载完毕!');
+            //         // 隐藏loading 动画页面
+            //         $('.J-loading').hide();
+            //         const index = swiperV.activeIndex;
+            //         palyIndexAudio(index);
+            //     }
+            // }
             function loadDefault(){
                 let imgUrlArr = [];
                 let imgObj = [];
@@ -477,16 +477,15 @@
                     img.src = $('.J-loadImg').eq([index]).css('background-image').match(/url\("(\S*)"\)/)[1];
                     imgObj.push(img);
                     img.onload = function() {
+                        console.log(parseInt(loadingflag/imgArrLength*100)+"%");
                         loadingflag ++;
-                        if(loadingflag === imgArrLength) {
+                        $('.J-loadingNum').html(parseInt(loadingflag/imgArrLength*100)+"%");
+                        if(loadingflag >= imgArrLength) {
                             console.log('全部加载完毕!');
                             // 隐藏loading 动画页面
                             $('.J-loading').hide();
                             const index = swiperV.activeIndex;
                             palyIndexAudio(index);
-                        } else {
-                            // 显示loading 动画页面
-                            $('.J-loading').show();
                         }
                     }
                 });
