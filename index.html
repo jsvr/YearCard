@@ -38,6 +38,9 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/index.css?v=015">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/zepto.fx.js"></script>
+    <script src="js/zepto.touch.js"></script>
     <script>
         (function (win, doc) {
             var metaViewport = doc.querySelector('meta[name="viewport"]');
@@ -472,9 +475,6 @@
         <img src="assets/images/web-swipe-tip.png" style="width:20px;height:15px; top:460px; left:150px;" id="array" class="resize">
         <div class="swiper-pagination"></div>
     </div>
-    <script src="js/zepto.min.js"></script>
-    <script src="js/zepto.fx.js"></script>
-    <script src="js/zepto.touch.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper.animate.min.js"></script>
     <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
@@ -487,7 +487,7 @@
                     title: '岁时有声‖定制你的音乐气质',  // 卡片标题  (选填) (默认拿 title)
                     desc: '典藏经典，刻录真情，中国唱片给大家拜年啦'  // 卡片描述
             };
-            initWXShareSDK(config);
+            // initWXShareSDK(config);
             // 判断图片是否加载完成
             // loadDefault();
             // 给iphoneX 的长屏分辨率手机设置css样式
@@ -597,7 +597,6 @@
             // 播放或暂停 index audio
             function palyIndexAudio(index) {
                 const hideFlag = $('.J-indexAudioHide').css('display');
-                console.log(hideFlag);
                 // 暂停
                 if (index === 5) {
                     // 隐藏首页播放按钮
@@ -758,7 +757,7 @@
             // });
             // page5 点击查看详情页 弹出弹框
             $('.J-imgItemt').on('click', function () {
-                const index = $(this).index();
+                const index = swiperDetail.realIndex;
                 const imgArr = [
                     'assets/images/page05_activity_img01.jpg',
                     'assets/images/page05_activity_img02.jpg',
