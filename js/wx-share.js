@@ -21,12 +21,14 @@
         var url = config.link || location.href.split('#')[0];
         $.ajax({
             type: 'GET',
-            url: '/wx_sign',
+            url: 'http://hpnewyear.china-crc.com.cn:8000/get_ticket',
             dataType: 'json',
             data: {
                 url: url
             },
             success: function(response){
+                console.log(response);
+                alert(response);
                 var appId = response.data.wx_appid;
                 var timestamp = response.data.timestamp;
                 var nonceStr = response.data.noncestr;
