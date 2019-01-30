@@ -483,11 +483,11 @@
         $(function () {
             var  config = {
                     link: location.href.split('#')[0],  // 分享链接  (选填) (默认当前链接会去掉 #后面的部分)
-                    imgUrl: 'https://jsvr.github.io/exercise_item/yearCard/assets/images/share_title.jpeg',  // 卡片图标
+                    imgUrl: 'http://hpnewyear.china-crc.com.cn/assets/images/share_title.jpeg',  // 卡片图标
                     title: '岁时有声‖定制你的音乐气质',  // 卡片标题  (选填) (默认拿 title)
                     desc: '典藏经典，刻录真情，中国唱片给大家拜年啦'  // 卡片描述
             };
-            // initWXShareSDK(config);
+            initWXShareSDK(config);
             // 判断图片是否加载完成
             // loadDefault();
             // 给iphoneX 的长屏分辨率手机设置css样式

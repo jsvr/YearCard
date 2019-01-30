@@ -17,11 +17,10 @@
         if(typeof config !== 'object'){
             return false;
         }
-
         var url = config.link || location.href.split('#')[0];
         $.ajax({
             type: 'GET',
-            url: 'http://hpnewyear.china-crc.com.cn:8000/get_ticket',
+            url: 'http://hpnewyear.china-crc.com.cn:8080/get_ticket',
             dataType: 'json',
             data: {
                 url: url
