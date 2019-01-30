@@ -27,7 +27,6 @@
             },
             success: function(response){
                 console.log(response);
-                alert(response);
                 var appId = response.data.wx_appid;
                 var timestamp = response.data.timestamp;
                 var nonceStr = response.data.noncestr;
