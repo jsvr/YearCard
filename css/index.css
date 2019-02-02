@@ -102,10 +102,10 @@ em {
     text-decoration: none;
 }
 /* 字体引入 */
-@font-face {
+/* @font-face {
     font-family: 'NanSongJvTi';
     src:url('../assets/font/nansongjvti.ttf');
-}
+} */
 /*公共类*/
 .fl {
     float: left
@@ -329,7 +329,7 @@ body {
     float: right;
     margin-right: 38px;
     font-size: 30px;
-    font-family: 'NanSongJvTi';
+    font-family: 'Microsoft YaHei';
     height: 300px;
     line-height: 38px;
     word-wrap: break-word;
@@ -552,7 +552,7 @@ body {
     float: right;
     margin-right: 38px;
     font-size: 30px;
-    font-family: 'NanSongJvTi';
+    font-family: 'Microsoft YaHei';
     height: 375px;
     line-height: 38px;
     word-wrap: break-word;
@@ -762,7 +762,7 @@ body {
     float: right;
     margin-right: 38px;
     font-size: 30px;
-    font-family: 'NanSongJvTi';
+    font-family: 'Microsoft YaHei';
     height: 375px;
     line-height: 38px;
     word-wrap: break-word;
